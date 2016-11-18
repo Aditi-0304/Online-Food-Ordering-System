@@ -15,7 +15,7 @@ namespace OFOS
         string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aditi Maheshwari\Source\Repos\OnlineFoodOrderingSystem_C4\OFOS\OFOS\App_Data\ofos.mdf;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
-            System.DateTime t1 = System.DateTime.Parse("2016/12/12 11:00:00.000");
+            System.DateTime t1 = System.DateTime.Parse("2016/12/12 10:00:00.000");
             System.DateTime t2 = System.DateTime.Parse("2016/12/12 23:00:00.000");
             System.DateTime t3 = System.DateTime.Now;
             if (t3.TimeOfDay < t1.TimeOfDay || t3.TimeOfDay > t2.TimeOfDay)
@@ -284,6 +284,7 @@ namespace OFOS
                     }
                     else
                     {
+                        
                         string insertSQL = "insert into [dbo].[Order_Details] (Order_Id, Item_no, Quantity, Price,Amount) VALUES(@order_id, @item_no, @qty, @price,@amount)";
                         cmd = new SqlCommand(insertSQL, con);
                         cmd.Parameters.AddWithValue("@order_id", (int)Session["order_id"]);
@@ -314,5 +315,7 @@ namespace OFOS
         {
             Response.Redirect("~/Registration.aspx");
         }
+
+        
     }
 }

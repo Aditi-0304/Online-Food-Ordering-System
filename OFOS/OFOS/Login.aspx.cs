@@ -13,6 +13,7 @@ namespace OFOS
     public partial class Login : System.Web.UI.Page
     {
         string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aditi Maheshwari\Source\Repos\OnlineFoodOrderingSystem_C4\OFOS\OFOS\App_Data\ofos.mdf;Integrated Security=True";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             status0.Text = Request.QueryString["msg"];
